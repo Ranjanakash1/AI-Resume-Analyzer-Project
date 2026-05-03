@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Analyze Resume - AI Resume Analyzer</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: white;
+    min-height: 100vh;
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background: #e8f0ff;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Main */
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.top-bar {
+    margin-bottom: 30px;
+}
+
+.top-bar h1 {
+    font-size: 32px;
+    color: #222;
+}
+
+/* Upload Card */
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.upload-box {
+    border: 2px dashed #2563eb;
+    padding: 40px;
+    text-align: center;
+    border-radius: 14px;
+    background: #f8fbff;
+}
+
+.upload-box p {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.upload-box input {
+    margin-bottom: 20px;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+/* Resume Tips */
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 12px;
+    color: #444;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .sidebar h2,
+    .sidebar h3 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+        padding: 10px 15px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .top-bar h1 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .upload-box {
+        padding: 25px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+
+    .top-bar h1 {
+        font-size: 22px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .upload-box {
+        padding: 20px;
+    }
+
+    .upload-box p {
+        font-size: 14px;
+    }
+
+    input[type="file"] {
+        width: 100%;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>AI Resume Analyzer</h3>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="active"><a href="analyseResume.html">Analyze Resume</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="resumetips.html">Resume Tips</a></li>
+            <li><a href="atsguide.html">ATS Guide</a></li>
+            
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="top-bar">
+            <h1>Analyze Resume</h1>
+        </div>
+
+        <!-- Upload Resume -->
+        <div class="card">
+            <h3>Upload Your Resume</h3>
+
+            <div class="upload-box">
+                <p>Select your resume file (PDF / DOCX)</p>
+                <input type="file">
+                <br>
+                <button>Analyze Now</button>
+            </div>
+        </div>
+
+        <!-- Resume Tips -->
+        <div class="card">
+            <h3>Before Uploading, Check These Tips</h3>
+
+            <ul>
+                <li>Use clear headings like Skills, Experience, Education</li>
+                <li>Add important job-related keywords</li>
+                <li>Keep formatting simple and ATS-friendly</li>
+                <li>Avoid too many graphics and tables</li>
+                <li>Use professional summary at the top</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

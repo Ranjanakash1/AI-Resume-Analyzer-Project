@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATS Guide - AI Resume Analyzer</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: white;
+    min-height: 100vh;
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background: #e8f0ff;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Main */
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.top-bar {
+    margin-bottom: 30px;
+}
+
+.top-bar h1 {
+    font-size: 32px;
+    color: #222;
+}
+
+/* Card */
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    color: #444;
+    line-height: 1.6;
+}
+/* Tablets */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+        padding: 10px 15px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .top-bar h1 {
+        font-size: 26px;
+        text-align: center;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .top-bar h1 {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card ul li {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>AI Resume Analyzer</h3>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="analyseResume.html">Analyze Resume</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="resumetips.html">Resume Tips</a></li>
+            <li class="active"><a href="atsguide.html">ATS Guide</a></li>
+            
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="top-bar">
+            <h1>ATS Guide</h1>
+        </div>
+
+        <!-- ATS Information -->
+        <div class="card">
+            <h3>What is ATS?</h3>
+
+            <p style="line-height:1.8; color:#444;">
+                ATS (Applicant Tracking System) is software used by companies 
+                to scan, filter, and rank resumes before they reach HR or recruiters. 
+                It helps employers quickly find the most suitable candidates based 
+                on keywords, skills, and job requirements.
+            </p>
+        </div>
+
+        <!-- ATS Friendly Tips -->
+        <div class="card">
+            <h3>How to Make Your Resume ATS-Friendly</h3>
+
+            <ul>
+                <li>Use standard section headings like Skills, Experience, Education</li>
+                <li>Add keywords directly from the job description</li>
+                <li>Use simple fonts like Arial, Calibri, or Times New Roman</li>
+                <li>Avoid images, icons, text boxes, and heavy graphics</li>
+                <li>Use bullet points for better readability</li>
+                <li>Save resume in PDF or DOCX format if required</li>
+                <li>Keep formatting clean and professional</li>
+            </ul>
+        </div>
+
+        <!-- ATS Mistakes -->
+        <div class="card">
+            <h3>Common ATS Mistakes</h3>
+
+            <ul>
+                <li>Using fancy templates with too many graphics</li>
+                <li>Missing important job-related keywords</li>
+                <li>Using unclear headings or unusual section names</li>
+                <li>Submitting scanned image resumes</li>
+                <li>Adding too much unnecessary information</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

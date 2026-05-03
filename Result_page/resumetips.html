@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume Tips - AI Resume Analyzer</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
+
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: white;
+    min-height: 100vh;
+    padding: 30px 20px;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover,
+.sidebar ul li.active {
+    background: #e8f0ff;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+/* Main */
+
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+.top-bar {
+    margin-bottom: 30px;
+}
+
+.top-bar h1 {
+    font-size: 32px;
+    color: #222;
+}
+
+/* Card */
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+    margin-bottom: 25px;
+}
+
+.card h3 {
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.card ul {
+    padding-left: 20px;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+    }
+
+    .sidebar h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding-left: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+        padding: 10px 15px;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .top-bar h1 {
+        font-size: 26px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+
+    .top-bar h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card ul li {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>AI Resume Analyzer</h3>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="analyseResume.html">Analyze Resume</a></li>
+            <li><a href="history.html">History</a></li>
+            <li class="active"><a href="resumetips.html">Resume Tips</a></li>
+            <li><a href="atsguide.html">ATS Guide</a></li>
+        
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="top-bar">
+            <h1>Resume Tips</h1>
+        </div>
+
+        <!-- Tips Card -->
+        <div class="card">
+            <h3>Best Resume Writing Tips</h3>
+
+            <ul>
+                <li>Keep your resume short and clear (1–2 pages maximum)</li>
+                <li>Use strong action words like Developed, Managed, Created</li>
+                <li>Add job-specific keywords for better ATS performance</li>
+                <li>Highlight achievements instead of only responsibilities</li>
+                <li>Use simple formatting and avoid too many graphics</li>
+                <li>Include a professional summary at the top</li>
+                <li>Keep contact details updated and professional</li>
+                <li>Check grammar and spelling carefully before submitting</li>
+            </ul>
+        </div>
+
+        <!-- Extra Tips -->
+        <div class="card">
+            <h3>Common Mistakes to Avoid</h3>
+
+            <ul>
+                <li>Using unprofessional email addresses</li>
+                <li>Adding unnecessary personal information</li>
+                <li>Too much text without proper sections</li>
+                <li>Using outdated skills or irrelevant experience</li>
+                <li>Submitting resume without proofreading</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

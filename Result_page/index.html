@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Resume Analyzer Result </title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>Ai Resume Analyzer</h2>
+
+        <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li class="active"><a href="analyseResume.html">Analyze Resume</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="resumetips.html">"Resume Tips</a></li>
+            <li><a href="atsguide.html">ATS Guide</a></li>
+            
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <div class="top-bar">
+            <h1>Analysis Result</h1>
+            <button>Download Report</button>
+        </div>
+
+        <!-- Score Section -->
+        <div class="cards">
+
+            <div class="card score-card">
+                <h3>Overall Score</h3>
+                <div class="circle">
+                    <span>78%</span>
+                </div>
+                <p>Good Resume Structure</p>
+            </div>
+
+            <div class="card breakdown">
+                <h3>Score Breakdown</h3>
+
+                <div class="progress-box">
+                    <p>Content Quality <span>80%</span></p>
+                    <div class="progress"><div class="fill w80"></div></div>
+                </div>
+
+                <div class="progress-box">
+                    <p>Formatting <span>75%</span></p>
+                    <div class="progress"><div class="fill w75"></div></div>
+                </div>
+
+                <div class="progress-box">
+                    <p>Keywords <span>70%</span></p>
+                    <div class="progress"><div class="fill w70"></div></div>
+                </div>
+
+                <div class="progress-box">
+                    <p>ATS Score <span>85%</span></p>
+                    <div class="progress"><div class="fill w85"></div></div>
+                </div>
+            </div>
+
+            <div class="card ats-card">
+                <h3>ATS Compatibility</h3>
+                <div class="check">✓</div>
+                <h2>High Compatibility</h2>
+                <p>ATS Score: 85/100</p>
+            </div>
+
+        </div>
+
+        <!-- Strength and Improve -->
+        <div class="cards">
+
+            <div class="card">
+                <h3>Strengths</h3>
+                <ul>
+                    <li>Clear layout</li>
+                    <li>Good use of action verbs</li>
+                    <li>Relevant experience highlighted</li>
+                    <li>Proper section use</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Areas to Improve</h3>
+                <ul>
+                    <li>Add more achievements</li>
+                    <li>Include more keywords</li>
+                    <li>Improve skills section</li>
+                    <li>Add professional summary</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Top Keywords Found</h3>
+                <div class="tags">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Machine Learning</span>
+                    <span>Data Analysis</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
