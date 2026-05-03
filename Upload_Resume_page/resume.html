@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="resume-upload.css">
+</head>
+<body >
+
+    <div class="container">
+        <h1>AI Resume Analyzer</h1>
+        <p>Upload your resume and get instant analysis 🚀</p>
+
+        <div class="upload-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="upload icon">
+            <h3>Drag & Drop your Resume here</h3>
+            <p>or</p>
+
+            <input type="file" id="fileInput" hidden>
+            <button onclick="document.getElementById('fileInput').click()">
+                Browse File
+            </button>
+
+            <p class="file-info">Supported formats: PDF, DOCX</p>
+        </div>
+    </div>
+
+</body>
+</html>
