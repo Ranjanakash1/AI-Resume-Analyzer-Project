@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - AI Resume Analyzer</title>
+ <link rel="stylesheet" href="style.css">
+
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- socialss -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+/* 
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+
+    
+      background: linear-gradient(-45deg, #020617, #0f172a, #111827, #1e293b);
+      background-size: 400% 400%;
+      animation: bgMove 12s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    } */
+
+    /* 📩 Contact Section */
+    .contact {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+   .contact h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+
+  /* 🎨 Gradient Colors */
+  background: linear-gradient(270deg, #38bdf8, #818cf8, #22c55e, #f472b6, #38bdf8);
+  background-size: 600% 600%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* ✨ Animation */
+  animation: movingGradient 6s ease infinite;
+}
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+    .contact p {
+      max-width: 600px;
+      margin-bottom: 30px;
+      opacity: 0.8;
+      animation: fadeUp 1.3s ease;
+    }
+
+    /* 🧾 Form */
+    .contact-form {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      animation: fadeUp 1.6s ease;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+
+      background: rgba(255,255,255,0.05);
+      color: #fff;
+    }
+
+    .contact-form textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    /* Button */
+    /* =========================
+   CONTACT BUTTON
+========================= */
+
+.contact-form button{
+
+  position:relative;
+
+  width:100%;
+
+  padding:15px 22px;
+
+  border:none;
+
+  cursor:pointer;
+
+  overflow:hidden;
+
+  font-size:15px;
+  font-weight:600;
+  letter-spacing:0.5px;
+
+  color:white;
+
+  border-radius:16px;
+
+  background:#0f172a;
+
+  transition:0.35s ease;
+
+  z-index:1;
+}
+
+/* =========================
+   MOVING RGB BORDER
+========================= */
+
+.contact-form button::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-3px;
+
+  border-radius:18px;
+
+  background:
+  linear-gradient(
+    270deg,
+    #00f0ff,
+    #3b82f6,
+    #8b5cf6,
+    #ff00c8,
+    #00f0ff
+  );
+
+  background-size:500% 500%;
+
+  animation:borderMove 5s linear infinite;
+
+  z-index:-3;
+
+  /* RGB GLOW USING BOX SHADOW */
+  box-shadow:
+  0 0 12px #00f0ff,
+  0 0 22px #3b82f6,
+  0 0 32px #8b5cf6,
+  0 0 42px #ff00c8;
+}
+
+/* INNER DARK LAYER */
+
+.contact-form button::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:2px;
+
+  border-radius:14px;
+
+  background:#0f172a;
+
+  z-index:-1;
+}
+
+/* =========================
+   HOVER
+========================= */
+
+.contact-form button:hover{
+
+  transform:
+  translateY(-4px)
+  scale(1.02);
+
+  /* EXTRA RGB GLOW */
+  box-shadow:
+  0 0 18px rgba(0,240,255,0.45),
+  0 0 32px rgba(59,130,246,0.35),
+  0 0 48px rgba(139,92,246,0.28),
+  0 0 65px rgba(255,0,200,0.20);
+}
+
+/* CLICK */
+
+.contact-form button:active{
+
+  transform:scale(0.98);
+}
+
+/* =========================
+   RGB MOVEMENT
+========================= */
+
+@keyframes borderMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+    .contact-form button:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🌐 Social socialss */
+    .socials {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .socials a {
+      font-size: 22px;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    /* .socials a:hover {
+      color: #38bdf8;
+      transform: scale(1.2);
+    } */
+.socials a:nth-child(1):hover i{
+
+  transform:scale(1.2);
+
+  background:linear-gradient(
+    270deg,
+    #f9ce34,
+    #ee2a7b,
+    #6228d7,
+    #f9ce34
+  );
+
+  background-size:600% 600%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:instaMove 3s ease infinite;
+
+  filter:drop-shadow(0 0 10px rgba(238,42,123,0.6));
+}
+
+/* MOVING COLOR */
+
+@keyframes instaMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+.socials a:nth-child(2):hover i{
+
+  transform:scale(1.2);
+
+  background:linear-gradient(
+    270deg,
+    #06b6d4,
+    #3b82f6,
+    #8b5cf6,
+    #06b6d4
+  );
+
+  background-size:600% 600%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:githubFlow 3s ease infinite;
+
+  filter:drop-shadow(0 0 12px rgba(59,130,246,0.7));
+}
+
+/* MOVING COLOR */
+
+@keyframes githubFlow{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+.socials a:nth-child(3):hover i{
+
+  transform:scale(1.2);
+
+  background:linear-gradient(
+    270deg,
+    #0ea5e9,
+    #2563eb,
+    #38bdf8,
+    #0ea5e9
+  );
+
+  background-size:600% 600%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:linkedinFlow 3s ease infinite;
+
+  filter:drop-shadow(0 0 12px rgba(37,99,235,0.7));
+}
+
+/* MOVING COLOR */
+
+@keyframes linkedinFlow{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+.socials a:nth-child(4):hover i{
+
+  transform:scale(1.2);
+
+  background:linear-gradient(
+    270deg,
+    #ea4335,
+    #fbbc05,
+    #34a853,
+    #4285f4,
+    #ea4335
+  );
+
+  background-size:700% 700%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:gmailFlow 3s ease infinite;
+
+  filter:drop-shadow(0 0 12px rgba(234,67,53,0.7));
+}
+
+/* MOVING COLOR */
+
+@keyframes gmailFlow{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+     
+    /* ✨ Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .contact h1 {
+        font-size: 30px;
+      }
+
+      .contact p {
+        font-size: 14px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+<nav class="navbar"> 
+  <div class="logo">
+    <!-- <i class="fa-solid fa-robot"></i>--> AI Resume 
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="home.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html" ><i class="fa-solid fa-circle-info"></i> About</a></li>
+
+    <!-- ✅ NEW JOB MATCHER OPTION -->
+    <li><a href="jobmatcher.html"><i class="fa-solid fa-briefcase"></i> Job Matcher</a></li>
+
+    <li><a href="upload.html"><i class="fa-solid fa-upload"></i> Upload</a></li>
+    <li><a href="contact.html"class="active"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+<!-- 🔥 Keep your navbar here -->
+
+<section class="contact">
+  <h1>Contact Us</h1>
+  <p>Have questions or want to improve your resume? Reach out and we’ll help you get started.</p>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <!-- Social Links -->
+  <div class="socials">
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-github"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+  </div>
+</section>
+
+</body>
+</html>

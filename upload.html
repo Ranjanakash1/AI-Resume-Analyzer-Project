@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Resume Analyzer</title>
+ <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== BASE ===== */
+body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+
+      /* 🌌 Animated Background */
+      background: linear-gradient(-45deg, #020617, #0f172a, #111827, #1e293b);
+      background-size: 400% 400%;
+      animation: bgMove 12s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+/* =========================
+   DOTS
+========================= */
+
+body::before{
+  content:"";
+
+  position:fixed;
+  inset:0;
+
+  background-image:
+  radial-gradient(
+    rgba(255,255,255,0.12) 1px,
+    transparent 1px
+  );
+
+  background-size:40px 40px;
+
+  opacity:0.18;
+
+  z-index:-5;
+}
+
+/* ===== HEADER ===== */
+.page-header{
+  text-align:center;
+  margin-top:90px;
+  margin-bottom:30px;
+}
+
+.page-header h1{
+  font-size:38px;
+
+  background:linear-gradient(270deg,#38bdf8,#818cf8,#22c55e);
+  background-size:400% 400%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:gradientMove 6s infinite;
+}
+
+.page-header p{
+  opacity:0.7;
+}
+
+/* ===== LAYOUT ===== */
+.main-layout{
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+/* ===== PANELS ===== */
+.resume-panel,
+.job-card{
+  width:360px;
+  padding:25px;
+  border-radius:15px;
+
+  background:rgba(15,23,42,0.9);
+  backdrop-filter:blur(12px);
+
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+
+  transition:0.4s;
+}
+
+.resume-panel:hover,
+.job-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 20px 60px rgba(56,189,248,0.3);
+}
+
+/* ===== RESUME PANEL ===== */
+.resume-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  min-height:320px;
+}
+
+.resume-panel h3{
+  font-size:20px;
+  margin-bottom:20px;
+
+  /* 🔥 gradient color */
+  background: linear-gradient(270deg, #38bdf8, #6366f1, #8b5cf6, #38bdf8);
+
+  background-size: 400% 400%;
+
+  /* 🔥 apply gradient to text */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: textMove 5s ease infinite;
+}
+@keyframes textMove{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+.resume-upload{
+  width:100%;
+  max-width:240px;
+
+  border:2px dashed #38f8ef;
+  padding:20px;
+  border-radius:10px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.resume-upload:hover{
+  background:rgba(56,189,248,0.1);
+  transform:scale(1.05);
+}
+
+.resume-upload input{
+  display:none;
+}
+
+.resume-preview{
+  margin-top:15px;
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* ===== SCORE CARD ===== */
+.jm-title{
+  display:flex;
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.line{
+  width:25px;
+  height:5px;
+  background:linear-gradient(90deg,#f59e0b,#fbbf24);
+  animation:slideLine 2s infinite alternate;
+}
+
+.jm-heading{
+  font-size:32px;
+  margin-bottom:20px;
+
+  background:linear-gradient(270deg,#38bdf8,#818cf8,#22c55e);
+  background-size:400% 400%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:gradientMove 6s infinite;
+}
+
+/* BARS */
+.jm-section{
+  margin-bottom:15px;
+}
+
+.jm-label{
+  display:flex;
+  justify-content:space-between;
+}
+
+.jm-bar{
+  height:5px;
+  background:#1e293b;
+  border-radius:10px;
+}
+
+.jm-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#f59e0b,#fbbf24);
+  box-shadow:0 0 10px rgba(245,158,11,0.6);
+  transition:1s;
+}
+
+/* STATS */
+.jm-stats{
+  margin-top:15px;
+}
+
+.jm-stats div{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:6px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes gradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+@keyframes slideLine{
+  from{width:20px;}
+  to{width:40px;}
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .main-layout{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .resume-panel,
+  .job-card{
+    width:100%;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<!--  navbar -->
+  <nav class="navbar"> 
+  <div class="logo">
+    <!-- <i class="fa-solid fa-robot"></i>--> AI Resume 
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="home.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html" ><i class="fa-solid fa-circle-info"></i> About</a></li>
+
+    <!-- ✅ NEW JOB MATCHER OPTION -->
+    <li><a href="jobmatcher.html"><i class="fa-solid fa-briefcase"></i> Job Matcher</a></li>
+
+    <li><a href="upload.html" class="active"><i class="fa-solid fa-upload"></i> Upload</a></li>
+    <li><a href="contact.html" ><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>Resume Compatibility Report</h1>
+  <p>Upload your resume to analyze strengths, weaknesses, and job readiness.</p>
+</div>
+
+<div class="main-layout">
+
+  <!-- LEFT PANEL -->
+  <div class="resume-panel">
+    <h3>Upload Resume</h3>
+
+    <label class="resume-upload">
+      Click to Upload Resume
+      <input type="file" id="resumeInput">
+    </label>
+
+    <div class="resume-preview" id="preview">
+      No resume uploaded
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="job-card">
+
+    <div class="jm-title">
+      <span class="line"></span>
+      <h2>Resume Analysis</h2>
+    </div>
+
+    <h1 class="jm-heading">Score</h1>
+
+    <div class="jm-section">
+      <div class="jm-label">
+        <span>Overall Score</span>
+        <span id="scoreText">0%</span>
+      </div>
+      <div class="jm-bar"><div class="jm-fill" id="scoreBar"></div></div>
+    </div>
+
+    <div class="jm-section">
+      <div class="jm-label">
+        <span>Skills Match</span>
+        <span id="skillText">0%</span>
+      </div>
+      <div class="jm-bar"><div class="jm-fill" id="skillBar"></div></div>
+    </div>
+
+    <div class="jm-section">
+      <div class="jm-label">
+        <span>Experience Match</span>
+        <span id="expText">0%</span>
+      </div>
+      <div class="jm-bar"><div class="jm-fill" id="expBar"></div></div>
+    </div>
+
+    <div class="jm-stats">
+      <div><span>Missing Skills</span><span id="missing">--</span></div>
+      <div><span>Keyword Match</span><span id="keywords">--</span></div>
+      <div><span>Detected Role</span><span id="role">--</span></div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+/* ANALYSIS */
+function analyzeText(text){
+
+  text = text.toLowerCase();
+
+  let score = 60;
+
+  if(text.includes("react")) score += 10;
+  if(text.includes("javascript")) score += 10;
+  if(text.includes("python")) score += 10;
+
+  let role = "General";
+
+  if(text.includes("react")) role = "Frontend Dev";
+  else if(text.includes("node")) role = "Backend Dev";
+  else if(text.includes("python")) role = "Data Role";
+
+  animateBar("scoreBar","scoreText",score);
+  animateBar("skillBar","skillText",score-5);
+  animateBar("expBar","expText",score-10);
+
+  document.getElementById("missing").innerText = "React, SQL";
+  document.getElementById("keywords").innerText = score + "%";
+  document.getElementById("role").innerText = role;
+}
+
+/* UPLOAD */
+document.getElementById("resumeInput").addEventListener("change", function(){
+
+  if(this.files.length > 0){
+
+    document.getElementById("preview").innerText =
+      "Uploaded: " + this.files[0].name;
+
+    let fakeText = this.files[0].name + " react javascript project";
+
+    analyzeText(fakeText);
+  }
+});
+
+/* ANIMATION */
+function animateBar(id,textId,value){
+  let bar=document.getElementById(id);
+  let text=document.getElementById(textId);
+  let width=0;
+
+  let interval=setInterval(()=>{
+    if(width>=value){
+      clearInterval(interval);
+    } else {
+      width++;
+      bar.style.width=width+"%";
+      text.innerText=width+"%";
+    }
+  },10);
+}
+
+</script>
+
+</body>
+</html>

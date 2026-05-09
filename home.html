@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume Analyzer</title>
+      <link rel="stylesheet" href="style.css">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+       /* body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+
+      /* 🌌 Animated Background *
+      background: linear-gradient(-45deg, #020617, #0f172a, #111827, #1e293b);
+      background-size: 400% 400%;
+      animation: bgMove 12s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    } */
+    /* 🔥 HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+  font-size: 50px;
+  font-weight: 700;
+
+  /* 🌈 Moving Gradient */
+  background: linear-gradient(270deg, #38bdf8, #818cf8, #22c55e, #f472b6, #38bdf8);
+  background-size: 500% 500%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: moveGradient 6s ease infinite;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}    .hero p {
+      margin-top: 15px;
+      font-size: 18px;
+      max-width: 650px;
+      opacity: 0.9;
+
+      animation: fadeUp 1.4s ease;
+    }
+
+    /* Buttons */
+ /* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons{
+
+  margin-top:35px;
+
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+
+  animation:fadeUp 1.8s ease;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+.btn{
+
+  position:relative;
+
+  padding:15px 34px;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:15px;
+  font-weight:600;
+
+  letter-spacing:0.5px;
+
+  overflow:hidden;
+
+  transition:0.4s ease;
+
+  z-index:1;
+
+  color:white;
+
+  background:#0f172a;
+
+  /* SEMI CURVE */
+  border-radius:
+  60px 18px 60px 18px;
+}
+
+/* =========================
+   RGB MOVING BORDER
+========================= */
+
+.btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:-3px;
+
+  border-radius:
+  62px 20px 62px 20px;
+
+  background:
+  linear-gradient(
+    270deg,
+    #00f0ff,
+    #3b82f6,
+    #8b5cf6,
+    #ff00c8,
+    #00f0ff
+  );
+
+  background-size:500% 500%;
+
+  animation:borderMove 5s linear infinite;
+
+  z-index:-3;
+
+  /* RGB GLOW */
+  box-shadow:
+  0 0 12px #00f0ff,
+  0 0 22px #3b82f6,
+  0 0 32px #8b5cf6,
+  0 0 42px #ff00c8;
+}
+
+/* INNER DARK LAYER */
+
+.btn::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:2px;
+
+  border-radius:
+  58px 16px 58px 16px;
+
+  background:#0f172a;
+
+  z-index:-1;
+}
+
+/* =========================
+   PRIMARY BUTTON
+========================= */
+
+.btn-primary{
+
+  color:white;
+}
+
+/* HOVER */
+
+.btn-primary:hover{
+
+  transform:
+  translateY(-5px)
+  scale(1.05);
+
+  box-shadow:
+  0 0 18px rgba(0,240,255,0.45),
+  0 0 32px rgba(59,130,246,0.35),
+  0 0 48px rgba(139,92,246,0.28),
+  0 0 65px rgba(255,0,200,0.20);
+}
+
+/* =========================
+   OUTLINE BUTTON
+========================= */
+
+.btn-outline{
+
+  color:#38bdf8;
+}
+
+/* HOVER */
+
+.btn-outline:hover{
+
+  transform:
+  translateY(-5px)
+  scale(1.05);
+
+  color:white;
+
+  box-shadow:
+  0 0 18px rgba(0,240,255,0.45),
+  0 0 32px rgba(59,130,246,0.35),
+  0 0 48px rgba(139,92,246,0.28),
+  0 0 65px rgba(255,0,200,0.20);
+}
+
+/* CLICK */
+
+.btn:active{
+
+  transform:scale(0.97);
+}
+
+/* =========================
+   RGB MOVEMENT
+========================= */
+
+@keyframes borderMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+    /* 📦 FEATURES */
+    .features {
+      display: flex;
+      gap: 25px;
+      margin-top: 60px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      padding: 25px;
+      border-radius: 12px;
+      width: 260px;
+      text-align: center;
+
+      animation: float 4s ease-in-out infinite;
+      transition: 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    .feature i {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    .feature:nth-child(2) {
+      animation-delay: 1s;
+    }
+
+    .feature:nth-child(3) {
+      animation-delay: 2s;
+    }
+
+    /* ✨ Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  
+    <nav class="navbar"> 
+  <div class="logo">
+    <!-- <i class="fa-solid fa-robot"></i>--> AI Resume 
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="home.html"class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html" ><i class="fa-solid fa-circle-info"></i> About</a></li>
+
+    <!-- ✅ NEW JOB MATCHER OPTION -->
+    <li><a href="jobmatcher.html"><i class="fa-solid fa-briefcase"></i> Job Matcher</a></li>
+
+    <li><a href="upload.html"><i class="fa-solid fa-upload"></i> Upload</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>  
+
+<!-- ✅ KEEP YOUR NAVBAR HERE -->
+
+<section class="hero">
+  <h1>Smart AI Resume Analyzer</h1>
+  <p>
+    Instantly analyze your resume, match it with job descriptions, 
+    and discover missing skills using AI-powered insights.
+  </p>
+
+  <div class="hero-buttons">
+    <button class="btn btn-primary">Analyze Resume</button>
+    <button class="btn btn-outline">Try Job Matcher</button>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+
+    <div class="feature">
+      <i class="fa-solid fa-file-arrow-up"></i>
+      <h3>Upload Resume</h3>
+      <p>Upload your resume and let AI scan it instantly.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-briefcase"></i>
+      <h3>Job Matching</h3>
+      <p>Compare your resume with job descriptions.</p>
+    </div>
+
+    <div class="feature">
+      <i class="fa-solid fa-lightbulb"></i>
+      <h3>Skill Suggestions</h3>
+      <p>Get smart tips to improve your resume.</p>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>

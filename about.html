@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | AI Resume Analyzer</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+/* body{
+  font-family:'Poppins',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  color:white;
+
+  background:
+  linear-gradient(-45deg,#020617,#0f172a,#111827,#1e293b);
+
+  background-size:400% 400%;
+
+  animation:bgMove 12s ease infinite;
+}
+
+/* BG ANIMATION *
+
+@keyframes bgMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+ */
+
+
+body::before{
+  content:"";
+
+  position:fixed;
+  inset:0;
+
+  background-image:
+  radial-gradient(
+    rgba(255,255,255,0.10) 1px,
+    transparent 1px
+  );
+
+  background-size:40px 40px;
+
+  opacity:0.14;
+
+  z-index:-5;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+/* .navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 8%;
+
+  background:rgba(2,6,23,0.75);
+
+  backdrop-filter:blur(12px);
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+
+  z-index:1000;
+} */
+
+/* LOGO */
+
+/* .logo{
+  font-size:24px;
+  font-weight:600;
+
+  background:linear-gradient(
+  90deg,
+  #38bdf8,
+  #8b5cf6
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+} */
+
+/* NAV LINKS */
+
+/* MENU */
+
+.menu-toggle{
+  display:none;
+
+  font-size:24px;
+
+  cursor:pointer;
+}
+
+/* =========================
+   PAGE
+========================= */
+
+.about-page{
+  width:100%;
+  padding:130px 20px 80px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.about-hero{
+  max-width:1250px;
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+/* =========================
+   LEFT
+========================= */
+
+.about-left{
+  animation:fadeUp 1s ease;
+}
+
+.about-left h1{
+
+  font-size:56px;
+  line-height:1.2;
+  font-weight:700;
+
+  background:linear-gradient(
+  270deg,
+  #38bdf8,
+  #818cf8,
+  #22c55e,
+  #f472b6,
+  #38bdf8
+  );
+
+  background-size:600% 600%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:movingGradient 6s ease infinite;
+}
+
+.about-left p{
+
+  margin-top:22px;
+
+  font-size:16px;
+  line-height:1.9;
+
+  color:rgba(255,255,255,0.75);
+}
+
+/* BUTTONS */
+
+.about-buttons{
+  margin-top:35px;
+
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.about-btn{
+
+  padding:13px 24px;
+
+  border-radius:14px;
+
+  border:none;
+
+  cursor:pointer;
+
+  font-size:15px;
+  font-weight:500;
+
+  transition:0.3s;
+}
+
+.primary-btn{
+
+  background:
+  linear-gradient(
+  90deg,
+  #7c3aed,
+  #8b5cf6
+  );
+
+  color:white;
+
+  box-shadow:
+  0 0 20px rgba(124,58,237,0.35);
+}
+
+.primary-btn:hover{
+
+  transform:translateY(-3px);
+
+  box-shadow:
+  0 0 28px rgba(124,58,237,0.55);
+}
+
+.secondary-btn{
+
+  background:#111827;
+
+  color:white;
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.secondary-btn:hover{
+  background:#1f2937;
+}
+
+/* =========================
+   RIGHT
+========================= */
+
+.about-right{
+  position:relative;
+
+  animation:fadeUp 1.3s ease;
+}
+
+/* FLOAT ICONS */
+
+.floating-icon{
+
+  position:absolute;
+
+  width:65px;
+  height:65px;
+
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:26px;
+
+  z-index:5;
+
+  animation:float 4s ease infinite;
+}
+
+.icon1{
+  top:15px;
+  left:335px;
+}
+
+.icon2{
+  bottom:15px;
+  right:15px;
+
+  animation-delay:1s;
+}
+
+.icon3{
+  top:50%;
+  right:15px;
+
+  transform:translateY(-50%);
+
+  animation-delay:2s;
+}
+
+/* MAIN CARD */
+
+.ai-card{
+
+  position:relative;
+
+  background:#081120;
+
+  border-radius:28px;
+
+  padding:35px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  min-height:500px;
+}
+
+/* RGB GLOW */
+
+.ai-card::before{
+  content:"";
+
+  position:absolute;
+
+  width:350px;
+  height:350px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(circle,
+
+  rgba(0,255,255,0.20),
+
+  rgba(140,0,255,0.16),
+
+  rgba(255,0,200,0.14),
+
+  transparent 70%);
+
+  top:-100px;
+  right:-100px;
+
+  filter:blur(50px);
+
+  animation:rgbMove 6s ease infinite alternate;
+}
+
+/* CONTENT */
+
+.ai-card-content{
+  position:relative;
+  z-index:2;
+}
+
+.ai-card-content h2{
+
+  font-size:32px;
+
+  margin-bottom:18px;
+
+  background:
+  linear-gradient(
+  90deg,
+  #00e5ff,
+  #ff00ff
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.ai-card-content p{
+
+  color:rgba(255,255,255,0.75);
+
+  line-height:1.9;
+
+  margin-bottom:30px;
+}
+
+/* STATS */
+
+.stats-grid{
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+}
+
+.stat-box{
+
+  background:#0f172a;
+
+  border-radius:18px;
+
+  padding:22px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.3s;
+}
+
+.stat-box:hover{
+
+  transform:translateY(-6px);
+
+  box-shadow:
+  0 0 20px rgba(0,229,255,0.12);
+}
+
+.stat-box h3{
+
+  font-size:30px;
+
+  color:#38bdf8;
+}
+
+.stat-box p{
+
+  margin-top:6px;
+
+  font-size:13px;
+
+  color:#94a3b8;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features-section{
+
+  max-width:1250px;
+
+  margin:90px auto 0;
+}
+
+.section-title{
+
+  text-align:center;
+
+  margin-bottom:50px;
+
+  animation:fadeUp 1s ease;
+}
+
+.section-title h2{
+
+  font-size:44px;
+
+  background:linear-gradient(
+  270deg,
+  #38bdf8,
+  #f472b6,
+  #22c55e,
+  #38bdf8
+  );
+
+  background-size:600% 600%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:movingGradient 6s ease infinite;
+}
+
+.section-title p{
+
+  margin-top:12px;
+
+  color:#94a3b8;
+}
+
+/* FEATURE GRID */
+
+.feature-grid{
+
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:25px;
+}
+
+/* CARD */
+
+.feature-card{
+
+  background:#081120;
+
+  border-radius:24px;
+
+  padding:30px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.3s;
+
+  animation:fadeUp 1s ease;
+}
+
+.feature-card:hover{
+
+  transform:translateY(-8px);
+
+  box-shadow:
+  0 0 25px rgba(0,229,255,0.12);
+}
+
+/* GLOW */
+
+.feature-card::before{
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(circle,
+  rgba(0,255,255,0.14),
+  rgba(140,0,255,0.12),
+  transparent 70%);
+
+  top:-80px;
+  right:-80px;
+
+  filter:blur(35px);
+}
+
+/* ICON */
+
+.feature-icon{
+
+  width:72px;
+  height:72px;
+
+  border-radius:20px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(124,58,237,0.35),
+  rgba(0,229,255,0.25)
+  );
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  font-size:30px;
+
+  margin-bottom:22px;
+
+  position:relative;
+  z-index:2;
+}
+
+.feature-card h3{
+
+  font-size:22px;
+
+  margin-bottom:14px;
+
+  position:relative;
+  z-index:2;
+}
+
+.feature-card p{
+
+  color:#94a3b8;
+
+  line-height:1.8;
+
+  font-size:14px;
+
+  position:relative;
+  z-index:2;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes movingGradient{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+@keyframes fadeUp{
+
+  from{
+    opacity:0;
+    transform:translateY(35px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@keyframes rgbMove{
+
+  from{
+    transform:
+    translate(0px,0px)
+    scale(1);
+  }
+
+  to{
+    transform:
+    translate(25px,-15px)
+    scale(1.12);
+  }
+}
+
+@keyframes float{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1100px){
+
+  .about-hero{
+    grid-template-columns:1fr;
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .about-right{
+    margin-top:20px;
+  }
+}
+
+@media(max-width:900px){
+
+  .nav-links{
+    position:absolute;
+
+    top:80px;
+    right:20px;
+
+    background:#081120;
+
+    flex-direction:column;
+
+    width:220px;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    display:none;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+}
+
+@media(max-width:768px){
+
+  .about-page{
+    padding:100px 18px 70px;
+  }
+
+  .about-left h1{
+    font-size:40px;
+  }
+
+  .section-title h2{
+    font-size:34px;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-buttons{
+    flex-direction:column;
+  }
+
+  .about-btn{
+    width:100%;
+  }
+
+  .floating-icon{
+    width:55px;
+    height:55px;
+
+    font-size:22px;
+  }
+
+  .icon1{
+    top:10px;
+    left:10px;
+  }
+
+  .icon2{
+    bottom:10px;
+    right:10px;
+  }
+
+  .icon3{
+    right:10px;
+  }
+
+  .ai-card{
+    padding:28px;
+    min-height:auto;
+  }
+}
+
+@media(max-width:480px){
+
+  .navbar{
+    padding:16px 5%;
+  }
+
+  .logo{
+    font-size:20px;
+  }
+
+  .about-left h1{
+    font-size:32px;
+  }
+
+  .about-left p{
+    font-size:14px;
+  }
+
+  .section-title h2{
+    font-size:28px;
+  }
+
+  .ai-card-content h2{
+    font-size:26px;
+  }
+
+  .feature-card{
+    padding:24px;
+  }
+
+  .feature-icon{
+    width:62px;
+    height:62px;
+
+    font-size:26px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar"> 
+  <div class="logo">AI Resume</div>
+
+  <ul class="nav-links">
+    <li><a href="home.html"><i class="fa-solid fa-house"></i> Home</a></li>
+    <li><a href="about.html"class="active"><i class="fa-solid fa-circle-info"></i> About</a></li>
+    <li><a href="jobmatcher.html" ><i class="fa-solid fa-briefcase"></i> Job Matcher</a></li>
+    <li><a href="upload.html"><i class="fa-solid fa-upload"></i> Upload</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+  </ul>
+
+  <div class="menu-toggle">☰</div>
+</nav>
+
+<!-- ABOUT PAGE -->
+
+<div class="about-page">
+
+  <div class="about-hero">
+
+    <!-- LEFT -->
+
+    <div class="about-left">
+
+      <h1>
+        Transform Your Resume
+        With AI Intelligence
+      </h1>
+
+      <p>
+        AI Resume Analyzer helps job seekers optimize resumes,
+        improve ATS compatibility, identify weaknesses, and
+        discover the best matching career opportunities using
+        intelligent AI-powered analysis.
+      </p>
+
+      <div class="about-buttons">
+
+        <button class="about-btn primary-btn">
+          Get Started
+        </button>
+
+        <button class="about-btn secondary-btn">
+          Explore Features
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="about-right">
+
+      <div class="floating-icon icon1">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+
+      <div class="floating-icon icon2">
+        <i class="fa-solid fa-chart-line"></i>
+      </div>
+
+      <div class="floating-icon icon3">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+
+      <div class="ai-card">
+
+        <div class="ai-card-content">
+
+          <h2>Why Choose Us?</h2>
+
+          <p>
+            Our intelligent AI system analyzes resumes,
+            calculates ATS scores, detects missing keywords,
+            identifies strengths & weaknesses, and recommends
+            jobs according to your skills and experience.
+          </p>
+
+          <div class="stats-grid">
+
+            <div class="stat-box">
+
+              <h3>95%</h3>
+
+              <p>ATS Accuracy</p>
+
+            </div>
+
+            <div class="stat-box">
+
+              <h3>10K+</h3>
+
+              <p>Resumes Analyzed</p>
+
+            </div>
+
+            <div class="stat-box">
+
+              <h3>500+</h3>
+
+              <p>AI Job Matches</p>
+
+            </div>
+
+            <div class="stat-box">
+
+              <h3>24/7</h3>
+
+              <p>Smart Analysis</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- FEATURES -->
+
+  <div class="features-section">
+
+    <div class="section-title">
+
+      <h2>Powerful Features</h2>
+
+      <p>
+        Advanced AI tools designed to improve your career journey
+      </p>
+
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-file-waveform"></i>
+        </div>
+
+        <h3>ATS Resume Analysis</h3>
+
+        <p>
+          Analyze resume compatibility with modern ATS systems
+          and improve visibility for recruiters.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <h3>Smart Suggestions</h3>
+
+        <p>
+          Get AI-generated suggestions to improve resume quality,
+          keywords, and professional presentation.
+        </p>
+
+      </div>
+
+      <div class="feature-card">
+
+        <div class="feature-icon">
+          <i class="fa-solid fa-briefcase"></i>
+        </div>
+
+        <h3>Job Recommendations</h3>
+
+        <p>
+          Discover the best matching jobs according to your
+          resume skills and experience.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+  document
+  .getElementById("navLinks")
+  .classList
+  .toggle("show");
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,412 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+ /* Icons */
+ @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* body {
+      font-family: 'Poppins', sans-serif;
+      color: #e5e7eb;
+      background: linear-gradient(-45deg, #0f172a, #111827, #020617, #1e293b);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    } */
+     body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+
+      /* 🌌 Animated Background */
+      background: linear-gradient(-45deg, #020617, #0f172a, #111827, #1e293b);
+      background-size: 400% 400%;
+      animation: bgMove 12s ease infinite;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+  /* 🔥 Navbar */
+.navbar {
+  position: sticky;
+  top: 25px;
+    padding: 0px 10px ;
+
+  z-index: 1100;
+left: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ width: 90%;
+  height: 60px;
+  /* padding: 15px 25px; */
+
+  background:rgba(2,6,23,0.75);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.05);
+
+  border-radius: 40PX ;
+  animation: fadeSlide 1.5s ease;
+}
+nav-links a::after{
+  content:"";
+
+  position:absolute;
+
+  left:0;
+  bottom:-6px;
+
+  width:0%;
+  height:2px;
+
+  background:#38bdf8;
+
+  transition:0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+  width:100%;
+}
+/* Logo */
+.logo {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #38bdf8;
+  padding-left: 20px;
+}
+
+/* .logo i {
+  margin-right: 8px;
+} */
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding-right: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #e5e7eb;
+  font-weight: 500;
+
+  padding: 8px 12px;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+transition: all 0.7s ease;
+  /* transition: all 0.3s ease; */
+  position: relative;
+}
+
+/* ✨ Hover Pop Effect */
+.nav-links a:hover {
+  color: #f5fcff;
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(30, 30, 30, 0.396);
+  border-radius: 50px;
+  /* filter: drop-shadow(0 0 10px #8a5cff) drop-shadow(0 0 20px #8a5cff); */
+}
+
+/* 🔥 Active */
+/* .nav-links .active {
+  color: #fb1f1f;
+} */
+.nav-links a.active {
+  color: #f7f4f4;
+  background: rgba(18, 12, 12, 0.745);
+  border-radius: 50px;
+  filter: drop-shadow(0 0 8px #5cfffa) drop-shadow(0 0 5px #7d5cff);
+}
+/* Glow */
+.nav-links a:hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 40px;
+  box-shadow: 0 0 8px #5cfffa,
+  0 0 5px #7d5cff;
+  z-index: -1;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+
+    background: rgba(15, 23, 42, 0.95);
+    width: 200px;
+    flex-direction: column;
+    text-align: center;
+
+    display: none;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+.contact {
+  /* padding: 80px 50px;
+    text-align: center;
+    font-style: none; */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 20px;
+  color: #fff;
+  animation: fadeIn 2s ease;
+
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact h2 {
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 75px;
+  margin-bottom: 25px;
+  background: linear-gradient(270deg, #ff00ff, #8a2be2, #00ffff, #ff00ff);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 6s ease infinite;
+}
+
+@keyframes textGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.para p {
+  font-size: 18px;
+  max-width: 700px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 50px;
+}
+
+.para p {
+  filter: drop-shadow(0 0 20px #8a5cff) drop-shadow(0 0 50px #8a5cff);
+}
+
+/* ===== SOCIAL conta.icon  for about ===== */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 25px;
+
+}
+
+.icon img {
+  width: 32px;
+  /* perfect footer size */
+  height: 32px;
+  border-radius: 8px;
+  /* soft corners */
+  transition: all 0.3s ease;
+  opacity: 0.95;
+}
+
+/* Hover Glow: matches the app color, not neon */
+.icon a:nth-child(1):hover img {
+  /* Instagram */
+  box-shadow: 0 0 12px #e1306c;
+}
+
+.icon a:nth-child(2):hover img {
+  /* GitHub */
+  box-shadow: 0 0 12px #ffffff;
+}
+
+.icon a:nth-child(3):hover img {
+  /* LinkedIn */
+  box-shadow: 0 0 12px #0077b5;
+}
+
+.icon a:nth-child(4):hover img {
+  /* Gmail */
+  box-shadow: 0 0 12px #d93025;
+}
+
+/* Slight Zoom on Hover */
+.icon a img:hover {
+  transform: scale(1.15);
+  opacity: 1;
+}
+/* =========================
+   📱 Mobile (≤480px)
+========================= */
+@media (max-width: 480px) {
+
+  .contact {
+    padding: 80px 15px;
+  }
+
+  .contact h2 {
+    font-size: 28px;
+    margin-top: 40px;
+  }
+
+  .para p {
+    font-size: 14px;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .icon {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .icon img {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================
+   📲 Tablet (481px - 768px)
+========================= */
+@media (min-width: 481px) and (max-width: 768px) {
+
+  .contact {
+    padding: 90px 25px;
+  }
+
+  .contact h2 {
+    font-size: 34px;
+  }
+
+  .para p {
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .icon {
+    gap: 18px;
+  }
+
+  .icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
+}
+
+
+/* =========================
+   💻 Small Laptop (769px - 1024px)
+========================= */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .contact {
+    padding: 100px 40px;
+  }
+
+  .contact h2 {
+    font-size: 38px;
+  }
+
+  .para p {
+    font-size: 17px;
+    max-width: 650px;
+  }
+
+  .icon img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
+/* =========================
+   🖥️ Large Screens (≥1025px)
+========================= */
+@media (min-width: 1025px) {
+
+  .contact {
+    padding: 120px 60px;
+  }
+
+  .contact h2 {
+    font-size: 44px;
+  }
+
+  .para p {
+    font-size: 18px;
+    max-width: 700px;
+  }
+
+  .icon img {
+    width: 32px;
+    height: 32px;
+  }
+}
