@@ -1,92 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - AI Resume Analyzer</title>
- <link rel="stylesheet" href="style.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
 
-    /* 📩 Contact Section */
-    .contact {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 100px 20px;
-      text-align: center;
-    }
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-   .contact h1 {
-  font-size: 42px;
-  margin-bottom: 10px;
+<title>Contact - AI Resume Analyzer</title>
 
-  /* 🎨 Gradient Colors */
-  background: linear-gradient(270deg, #38bdf8, #818cf8, #22c55e, #f472b6, #38bdf8);
-  background-size: 600% 600%;
+<link rel="stylesheet" href="style.css">
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+<!-- FONT -->
 
-  /* ✨ Animation */
-  animation: movingGradient 6s ease infinite;
-}
-@keyframes movingGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- ICONS -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-    .contact p {
-      max-width: 600px;
-      margin-bottom: 30px;
-      opacity: 0.8;
-      animation: fadeUp 1.3s ease;
-    }
+/* =========================
+   BODY
+========================= */
 
-    /* 🧾 Form */
-    .contact-form {
-      width: 100%;
-      max-width: 500px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+body{
 
-      animation: fadeUp 1.6s ease;
-    }
+  font-family:'Poppins',sans-serif;
 
-    .contact-form input,
-    .contact-form textarea {
-      padding: 12px;
-      border-radius: 8px;
-      border: none;
-      outline: none;
+  color:#fff;
 
-      background: rgba(255,255,255,0.05);
-      color: #fff;
-    }
+  overflow-x:hidden;
 
-    .contact-form textarea {
-      resize: none;
-      height: 120px;
-    }
+  background:
+  linear-gradient(
+    -45deg,
+    #020617,
+    #0f172a,
+    #111827,
+    #1e293b
+  );
 
-    /* Button */
-    /* =========================
-   CONTACT BUTTON
+  background-size:400% 400%;
+
+  animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+/* =========================
+   DOTS
+========================= */
+
+body::before{
+
+  content:"";
+
+  position:fixed;
+  inset:0;
+
+  background-image:
+  radial-gradient(
+    rgba(255,255,255,0.10) 1px,
+    transparent 1px
+  );
+
+  background-size:40px 40px;
+
+  opacity:0.16;
+
+  z-index:-5;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.menu-toggle{
+
+  display:none;
+
+  font-size:28px;
+
+  cursor:pointer;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact{
+
+  min-height:100vh;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:center;
+
+  align-items:center;
+
+  padding:120px 20px 70px;
+
+  text-align:center;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.contact h1{
+
+  font-size:42px;
+
+  margin-bottom:12px;
+
+  background:
+  linear-gradient(
+    270deg,
+    #38bdf8,
+    #818cf8,
+    #22c55e,
+    #f472b6,
+    #38bdf8
+  );
+
+  background-size:600% 600%;
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+
+  animation:movingGradient 6s ease infinite;
+}
+
+@keyframes movingGradient{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+.contact p{
+
+  max-width:600px;
+
+  margin-bottom:35px;
+
+  opacity:0.8;
+
+  line-height:1.8;
+
+  animation:fadeUp 1.3s ease;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.contact-form{
+
+  width:100%;
+
+  max-width:520px;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:18px;
+
+  animation:fadeUp 1.6s ease;
+}
+
+/* INPUTS */
+
+.contact-form input,
+.contact-form textarea{
+
+  padding:14px;
+
+  border-radius:12px;
+
+  border:none;
+
+  outline:none;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  color:#fff;
+
+  font-size:15px;
+
+  transition:0.3s;
+
+  border:
+  1px solid rgba(255,255,255,0.05);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+  border:
+  1px solid rgba(56,189,248,0.4);
+
+  box-shadow:
+  0 0 15px rgba(56,189,248,0.18);
+}
+
+/* PLACEHOLDER */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+
+  color:#9ca3af;
+}
+
+/* TEXTAREA */
+
+.contact-form textarea{
+
+  resize:none;
+
+  min-height:140px;
+}
+
+/* =========================
+   BUTTON
 ========================= */
 
 .contact-form button{
@@ -105,6 +278,7 @@
 
   font-size:15px;
   font-weight:600;
+
   letter-spacing:0.5px;
 
   color:white;
@@ -118,9 +292,7 @@
   z-index:1;
 }
 
-/* =========================
-   MOVING RGB BORDER
-========================= */
+/* RGB BORDER */
 
 .contact-form button::before{
 
@@ -148,7 +320,6 @@
 
   z-index:-3;
 
-  /* RGB GLOW USING BOX SHADOW */
   box-shadow:
   0 0 12px #00f0ff,
   0 0 22px #3b82f6,
@@ -156,7 +327,7 @@
   0 0 42px #ff00c8;
 }
 
-/* INNER DARK LAYER */
+/* INNER */
 
 .contact-form button::after{
 
@@ -173,9 +344,7 @@
   z-index:-1;
 }
 
-/* =========================
-   HOVER
-========================= */
+/* HOVER */
 
 .contact-form button:hover{
 
@@ -183,7 +352,6 @@
   translateY(-4px)
   scale(1.02);
 
-  /* EXTRA RGB GLOW */
   box-shadow:
   0 0 18px rgba(0,240,255,0.45),
   0 0 32px rgba(59,130,246,0.35),
@@ -198,9 +366,7 @@
   transform:scale(0.98);
 }
 
-/* =========================
-   RGB MOVEMENT
-========================= */
+/* RGB ANIMATION */
 
 @keyframes borderMove{
 
@@ -217,32 +383,40 @@
   }
 }
 
-    .contact-form button:hover {
-      transform: scale(1.05);
-    }
+/* =========================
+   SOCIALS
+========================= */
 
-    /* 🌐 Social socialss */
-    .socials {
-      margin-top: 30px;
-      display: flex;
-      gap: 20px;
-    }
+.socials{
 
-    .socials a {
-      font-size: 22px;
-      color: #fff;
-      transition: 0.3s;
-    }
+  margin-top:35px;
 
-    /* .socials a:hover {
-      color: #38bdf8;
-      transform: scale(1.2);
-    } */
+  display:flex;
+
+  gap:22px;
+
+  flex-wrap:wrap;
+
+  justify-content:center;
+}
+
+.socials a{
+
+  font-size:24px;
+
+  color:#fff;
+
+  transition:0.3s;
+}
+
+/* INSTAGRAM */
+
 .socials a:nth-child(1):hover i{
 
   transform:scale(1.2);
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     270deg,
     #f9ce34,
     #ee2a7b,
@@ -253,14 +427,14 @@
   background-size:600% 600%;
 
   -webkit-background-clip:text;
+
   -webkit-text-fill-color:transparent;
 
   animation:instaMove 3s ease infinite;
 
-  filter:drop-shadow(0 0 10px rgba(238,42,123,0.6));
+  filter:
+  drop-shadow(0 0 10px rgba(238,42,123,0.6));
 }
-
-/* MOVING COLOR */
 
 @keyframes instaMove{
 
@@ -276,11 +450,15 @@
     background-position:0% 50%;
   }
 }
+
+/* GITHUB */
+
 .socials a:nth-child(2):hover i{
 
   transform:scale(1.2);
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     270deg,
     #06b6d4,
     #3b82f6,
@@ -291,14 +469,14 @@
   background-size:600% 600%;
 
   -webkit-background-clip:text;
+
   -webkit-text-fill-color:transparent;
 
   animation:githubFlow 3s ease infinite;
 
-  filter:drop-shadow(0 0 12px rgba(59,130,246,0.7));
+  filter:
+  drop-shadow(0 0 12px rgba(59,130,246,0.7));
 }
-
-/* MOVING COLOR */
 
 @keyframes githubFlow{
 
@@ -314,11 +492,15 @@
     background-position:0% 50%;
   }
 }
+
+/* LINKEDIN */
+
 .socials a:nth-child(3):hover i{
 
   transform:scale(1.2);
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     270deg,
     #0ea5e9,
     #2563eb,
@@ -329,14 +511,14 @@
   background-size:600% 600%;
 
   -webkit-background-clip:text;
+
   -webkit-text-fill-color:transparent;
 
   animation:linkedinFlow 3s ease infinite;
 
-  filter:drop-shadow(0 0 12px rgba(37,99,235,0.7));
+  filter:
+  drop-shadow(0 0 12px rgba(37,99,235,0.7));
 }
-
-/* MOVING COLOR */
 
 @keyframes linkedinFlow{
 
@@ -352,11 +534,15 @@
     background-position:0% 50%;
   }
 }
+
+/* GMAIL */
+
 .socials a:nth-child(4):hover i{
 
   transform:scale(1.2);
 
-  background:linear-gradient(
+  background:
+  linear-gradient(
     270deg,
     #ea4335,
     #fbbc05,
@@ -368,14 +554,14 @@
   background-size:700% 700%;
 
   -webkit-background-clip:text;
+
   -webkit-text-fill-color:transparent;
 
   animation:gmailFlow 3s ease infinite;
 
-  filter:drop-shadow(0 0 12px rgba(234,67,53,0.7));
+  filter:
+  drop-shadow(0 0 12px rgba(234,67,53,0.7));
 }
-
-/* MOVING COLOR */
 
 @keyframes gmailFlow{
 
@@ -392,73 +578,265 @@
   }
 }
 
-     
-    /* ✨ Animations */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+/* =========================
+   FADE UP
+========================= */
 
-    /* 📱 Responsive */
-    @media (max-width: 768px) {
-      .contact h1 {
-        font-size: 30px;
-      }
+@keyframes fadeUp{
 
-      .contact p {
-        font-size: 14px;
-      }
-    }
+  from{
 
-  </style>
+    opacity:0;
+
+    transform:translateY(30px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* MOBILE MENU */
+
+@media(max-width:900px){
+
+  .menu-toggle{
+
+    display:block;
+  }
+
+  .nav-links{
+
+    position:absolute;
+
+    top:80px;
+    right:20px;
+
+    background:#081120;
+
+    flex-direction:column;
+
+    width:220px;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    display:none;
+
+    z-index:999;
+  }
+
+  .nav-links.show{
+
+    display:flex;
+  }
+}
+
+/* TABLET */
+
+@media(max-width:768px){
+
+  .contact{
+
+    padding:110px 18px 60px;
+  }
+
+  .contact h1{
+
+    font-size:32px;
+  }
+
+  .contact p{
+
+    font-size:14px;
+  }
+
+  .contact-form{
+
+    max-width:100%;
+  }
+
+  .socials{
+
+    gap:18px;
+  }
+
+  .socials a{
+
+    font-size:22px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+  .contact h1{
+
+    font-size:28px;
+  }
+
+  .contact p{
+
+    font-size:13px;
+  }
+
+  .contact-form input,
+  .contact-form textarea{
+
+    font-size:14px;
+  }
+
+  .contact-form button{
+
+    font-size:14px;
+  }
+
+  .socials a{
+
+    font-size:20px;
+  }
+}
+
+</style>
 </head>
 
 <body>
+
+<!-- NAVBAR -->
+
 <nav class="navbar"> 
+
   <div class="logo">
-    <!-- <i class="fa-solid fa-robot"></i>--> AI Resume 
+    AI Resume 
   </div>
 
-  <ul class="nav-links">
-    <li><a href="home.html"><i class="fa-solid fa-house"></i> Home</a></li>
-    <li><a href="about.html" ><i class="fa-solid fa-circle-info"></i> About</a></li>
+  <ul class="nav-links" id="navLinks">
 
-    <!-- ✅ NEW JOB MATCHER OPTION -->
-    <li><a href="jobmatcher.html"><i class="fa-solid fa-briefcase"></i> Job Matcher</a></li>
+    <li>
+      <a href="home.html">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+    </li>
 
-    <li><a href="upload.html"><i class="fa-solid fa-upload"></i> Upload</a></li>
-    <li><a href="contact.html"class="active"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li>
+      <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i> About
+      </a>
+    </li>
+
+    <li>
+      <a href="jobmatcher.html">
+        <i class="fa-solid fa-briefcase"></i> Job Matcher
+      </a>
+    </li>
+
+    <li>
+      <a href="upload.html">
+        <i class="fa-solid fa-upload"></i> Score
+      </a>
+    </li>
+
+    <li>
+      <a href="contact.html" class="active">
+        <i class="fa-solid fa-envelope"></i> Contact
+      </a>
+    </li>
+
   </ul>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  <!-- MENU -->
+
+  <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
 </nav>
-<!-- 🔥 Keep your navbar here -->
+
+<!-- CONTACT -->
 
 <section class="contact">
-  <h1>Contact Us</h1>
-  <p>Have questions or want to improve your resume? Reach out and we’ll help you get started.</p>
+
+  <h1>
+    Contact Us
+  </h1>
+
+  <p>
+    Have questions or want to improve your resume?
+    Reach out and we’ll help you get started.
+  </p>
+
+  <!-- FORM -->
 
   <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
+
+    <input
+      type="text"
+      placeholder="Your Name"
+      required
+    >
+
+    <input
+      type="email"
+      placeholder="Your Email"
+      required
+    >
+
+    <textarea
+      placeholder="Your Message"
+    ></textarea>
+
+    <button type="submit">
+      Send Message
+    </button>
+
   </form>
 
-  <!-- Social Links -->
+  <!-- SOCIALS -->
+
   <div class="socials">
-    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    <a href="#"><i class="fa-brands fa-github"></i></a>
-    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+    <a href="#">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-brands fa-github"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-brands fa-linkedin"></i>
+    </a>
+
+    <a href="#">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+
   </div>
+
 </section>
+
+<!-- MOBILE MENU JS -->
+
+<script>
+
+function toggleMenu(){
+
+  document
+  .getElementById("navLinks")
+  .classList
+  .toggle("show");
+}
+
+</script>
 
 </body>
 </html>
