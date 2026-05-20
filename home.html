@@ -1,65 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Resume Analyzer</title>
-      <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<title>AI Resume Analyzer</title>
 
-     
-    /* 🔥 HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-    }
+<link rel="stylesheet" href="style.css">
 
-    .hero h1 {
-  font-size: 50px;
-  font-weight: 700;
+<!-- Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  /* 🌈 Moving Gradient */
-  background: linear-gradient(270deg, #38bdf8, #818cf8, #22c55e, #f472b6, #38bdf8);
-  background-size: 500% 500%;
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+<style>
 
-  animation: moveGradient 6s ease infinite;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-@keyframes moveGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}    .hero p {
-      margin-top: 15px;
-      font-size: 18px;
-      max-width: 650px;
-      opacity: 0.9;
+/* =========================
+   HERO
+========================= */
 
-      animation: fadeUp 1.4s ease;
-    }
+.hero{
 
-    /* Buttons */
- /* =========================
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+
+  padding:
+  120px 20px 40px;
+}
+
+/* TITLE */
+
+.hero h1{
+
+  font-size:50px;
+  font-weight:700;
+
+  background:
+  linear-gradient(
+    270deg,
+    #38bdf8,
+    #818cf8,
+    #22c55e,
+    #f472b6,
+    #38bdf8
+  );
+
+  background-size:500% 500%;
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  animation:moveGradient 6s ease infinite;
+}
+
+@keyframes moveGradient{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+}
+
+/* HERO TEXT */
+
+.hero p{
+
+  margin-top:15px;
+
+  font-size:18px;
+
+  max-width:650px;
+
+  opacity:0.9;
+
+  line-height:1.8;
+
+  animation:fadeUp 1.4s ease;
+}
+
+/* =========================
    HERO BUTTONS
 ========================= */
 
@@ -71,12 +110,12 @@
   gap:20px;
   flex-wrap:wrap;
 
+  justify-content:center;
+
   animation:fadeUp 1.8s ease;
 }
 
-/* =========================
-   BUTTON BASE
-========================= */
+/* BUTTON BASE */
 
 .btn{
 
@@ -103,14 +142,11 @@
 
   background:#0f172a;
 
-  /* SEMI CURVE */
   border-radius:
   60px 18px 60px 18px;
 }
 
-/* =========================
-   RGB MOVING BORDER
-========================= */
+/* RGB BORDER */
 
 .btn::before{
 
@@ -139,7 +175,6 @@
 
   z-index:-3;
 
-  /* RGB GLOW */
   box-shadow:
   0 0 12px #00f0ff,
   0 0 22px #3b82f6,
@@ -147,7 +182,7 @@
   0 0 42px #ff00c8;
 }
 
-/* INNER DARK LAYER */
+/* INNER LAYER */
 
 .btn::after{
 
@@ -165,48 +200,13 @@
   z-index:-1;
 }
 
-/* =========================
-   PRIMARY BUTTON
-========================= */
-
-.btn-primary{
-
-  color:white;
-}
-
 /* HOVER */
 
-.btn-primary:hover{
+.btn:hover{
 
   transform:
   translateY(-5px)
   scale(1.05);
-
-  box-shadow:
-  0 0 18px rgba(0,240,255,0.45),
-  0 0 32px rgba(59,130,246,0.35),
-  0 0 48px rgba(139,92,246,0.28),
-  0 0 65px rgba(255,0,200,0.20);
-}
-
-/* =========================
-   OUTLINE BUTTON
-========================= */
-
-.btn-outline{
-
-  color:#38bdf8;
-}
-
-/* HOVER */
-
-.btn-outline:hover{
-
-  transform:
-  translateY(-5px)
-  scale(1.05);
-
-  color:white;
 
   box-shadow:
   0 0 18px rgba(0,240,255,0.45),
@@ -222,9 +222,7 @@
   transform:scale(0.97);
 }
 
-/* =========================
-   RGB MOVEMENT
-========================= */
+/* RGB ANIMATION */
 
 @keyframes borderMove{
 
@@ -241,139 +239,397 @@
   }
 }
 
-    /* 📦 FEATURES */
-    .features {
-      display: flex;
-      gap: 25px;
-      margin-top: 60px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
+/* =========================
+   FEATURES
+========================= */
 
-    .feature {
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      padding: 25px;
-      border-radius: 12px;
-      width: 260px;
-      text-align: center;
+.features{
 
-      animation: float 4s ease-in-out infinite;
-      transition: 0.3s;
-    }
+  display:flex;
 
-    .feature:hover {
-      transform: translateY(-10px) scale(1.05);
-    }
+  gap:25px;
 
-    .feature i {
-      font-size: 30px;
-      margin-bottom: 10px;
-      color: #38bdf8;
-    }
+  margin-top:60px;
 
-    .feature:nth-child(2) {
-      animation-delay: 1s;
-    }
+  flex-wrap:wrap;
 
-    .feature:nth-child(3) {
-      animation-delay: 2s;
-    }
+  justify-content:center;
+}
 
-    /* ✨ Animations */
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+/* CARD */
 
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
+.feature{
 
-    /* 📱 Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+  background:
+  rgba(255,255,255,0.05);
 
-      .hero p {
-        font-size: 15px;
-      }
+  backdrop-filter:blur(10px);
 
-      .features {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+  padding:25px;
 
-  </style>
+  border-radius:12px;
+
+  width:260px;
+
+  text-align:center;
+
+  animation:float 4s ease-in-out infinite;
+
+  transition:0.3s;
+}
+
+.feature:hover{
+
+  transform:
+  translateY(-10px)
+  scale(1.05);
+}
+
+/* ICON */
+
+.feature i{
+
+  font-size:30px;
+
+  margin-bottom:10px;
+
+  color:#38bdf8;
+}
+
+/* CARD DELAY */
+
+.feature:nth-child(2){
+
+  animation-delay:1s;
+}
+
+.feature:nth-child(3){
+
+  animation-delay:2s;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:
+    translateY(30px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+  }
+}
+
+@keyframes float{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-12px);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+/* TABLET */
+
+@media(max-width:992px){
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  /* HERO */
+
+  .hero{
+
+    padding:
+    130px 18px 40px;
+  }
+
+  .hero h1{
+
+    font-size:34px;
+
+    line-height:1.3;
+  }
+
+  .hero p{
+
+    font-size:15px;
+
+    max-width:95%;
+  }
+
+  /* BUTTONS */
+
+  .hero-buttons{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    width:100%;
+  }
+
+  .btn{
+
+    width:90%;
+
+    text-align:center;
+  }
+
+  /* FEATURES */
+
+  .features{
+
+    flex-direction:column;
+
+    align-items:center;
+
+    width:100%;
+  }
+
+  .feature{
+
+    width:90%;
+  }
+
+  /* MENU */
+
+  .menu-toggle{
+
+    display:block;
+  }
+
+  .nav-links{
+
+    position:absolute;
+
+    top:80px;
+    right:5%;
+
+    width:230px;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:
+    rgba(15,23,42,0.95);
+
+    backdrop-filter:blur(12px);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
+
+    display:none;
+
+    z-index:999;
+  }
+
+  .nav-links.active{
+
+    display:flex;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+  .hero h1{
+
+    font-size:28px;
+  }
+
+  .hero p{
+
+    font-size:14px;
+  }
+
+  .btn{
+
+    font-size:14px;
+
+    padding:14px 20px;
+  }
+
+  .feature{
+
+    padding:22px;
+  }
+}
+
+</style>
 </head>
 
 <body>
-  
-    <nav class="navbar"> 
+
+<!-- NAVBAR -->
+
+<nav class="navbar"> 
+
   <div class="logo">
-    <!-- <i class="fa-solid fa-robot"></i>--> AI Resume 
+    AI Resume 
   </div>
 
-  <ul class="nav-links">
-    <li><a href="home.html"class="active"><i class="fa-solid fa-house"></i> Home</a></li>
-    <li><a href="about.html" ><i class="fa-solid fa-circle-info"></i> About</a></li>
+  <ul class="nav-links" id="navLinks">
 
-    <!-- ✅ NEW JOB MATCHER OPTION -->
-    <li><a href="jobmatcher.html"><i class="fa-solid fa-briefcase"></i> Job Matcher</a></li>
+    <li>
+      <a href="home.html" class="active">
+        <i class="fa-solid fa-house"></i> Home
+      </a>
+    </li>
 
-    <li><a href="upload.html"><i class="fa-solid fa-upload"></i> Upload</a></li>
-    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    <li>
+      <a href="about.html">
+        <i class="fa-solid fa-circle-info"></i> About
+      </a>
+    </li>
+
+    <li>
+      <a href="jobmatcher.html">
+        <i class="fa-solid fa-briefcase"></i> Job Matcher
+      </a>
+    </li>
+
+    <li>
+      <a href="upload.html">
+        <i class="fa-solid fa-upload"></i> Score
+      </a>
+    </li>
+
+    <li>
+      <a href="contact.html">
+        <i class="fa-solid fa-envelope"></i> Contact
+      </a>
+    </li>
+
   </ul>
 
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-</nav>  
+  <!-- MENU -->
 
-<!-- ✅ KEEP YOUR NAVBAR HERE -->
+  <div class="menu-toggle" onclick="toggleMenu()">
+    ☰
+  </div>
+
+</nav>
+
+<!-- HERO -->
 
 <section class="hero">
-  <h1>Smart AI Resume Analyzer</h1>
+
+  <h1>
+    Smart AI Resume Analyzer
+  </h1>
+
   <p>
-    Instantly analyze your resume, match it with job descriptions, 
-    and discover missing skills using AI-powered insights.
+    Instantly analyze your resume,
+    match it with job descriptions,
+    and discover missing skills
+    using AI-powered insights.
   </p>
 
+  <!-- BUTTONS -->
+
   <div class="hero-buttons">
-    <button class="btn btn-primary">Analyze Resume</button>
-    <button class="btn btn-outline">Try Job Matcher</button>
+
+    <button class="btn btn-primary">
+      Analyze Resume
+    </button>
+
+    <button class="btn btn-outline">
+      Try Job Matcher
+    </button>
+
   </div>
 
   <!-- FEATURES -->
+
   <div class="features">
 
     <div class="feature">
+
       <i class="fa-solid fa-file-arrow-up"></i>
+
       <h3>Upload Resume</h3>
-      <p>Upload your resume and let AI scan it instantly.</p>
+
+      <p>
+        Upload your resume and let AI scan it instantly.
+      </p>
+
     </div>
 
     <div class="feature">
+
       <i class="fa-solid fa-briefcase"></i>
+
       <h3>Job Matching</h3>
-      <p>Compare your resume with job descriptions.</p>
+
+      <p>
+        Compare your resume with job descriptions.
+      </p>
+
     </div>
 
     <div class="feature">
+
       <i class="fa-solid fa-lightbulb"></i>
+
       <h3>Skill Suggestions</h3>
-      <p>Get smart tips to improve your resume.</p>
+
+      <p>
+        Get smart tips to improve your resume.
+      </p>
+
     </div>
 
   </div>
+
 </section>
+
+<!-- MOBILE MENU JS -->
+
+<script>
+
+function toggleMenu(){
+
+  document
+  .getElementById("navLinks")
+  .classList
+  .toggle("active");
+}
+
+</script>
 
 </body>
 </html>
