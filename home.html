@@ -357,6 +357,7 @@
   .hero p{
     font-size:16px;
   }
+  
 }
 
 /* MOBILE */
@@ -460,6 +461,42 @@
 
     display:flex;
   }
+
+  /* MOBILE MENU TEXT EFFECT */
+
+  .nav-links.active li{
+
+    opacity:0;
+
+    transform:translateX(40px);
+
+    animation:slideMenuText 0.5s ease forwards;
+  }
+
+  .nav-links.active li:nth-child(1){
+
+    animation-delay:0.1s;
+  }
+
+  .nav-links.active li:nth-child(2){
+
+    animation-delay:0.2s;
+  }
+
+  .nav-links.active li:nth-child(3){
+
+    animation-delay:0.3s;
+  }
+
+  .nav-links.active li:nth-child(4){
+
+    animation-delay:0.4s;
+  }
+
+  .nav-links.active li:nth-child(5){
+
+    animation-delay:0.5s;
+  }
 }
 
 /* SMALL MOBILE */
@@ -486,6 +523,27 @@
   .feature{
 
     padding:22px;
+  }
+}
+
+/* =========================
+   SLIDE TEXT ANIMATION
+========================= */
+
+@keyframes slideMenuText{
+
+  from{
+
+    opacity:0;
+
+    transform:translateX(40px);
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateX(0);
   }
 }
 
